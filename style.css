@@ -150,18 +150,24 @@ section{
 .service .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:1.5rem;
+    gap:5.5rem;
 }
 
 
 .service .box-container .box{
     border-radius: .5rem;
     height: 500px;
-    width: 300px;
+    width: 350px;
+    transition: transform 0.3s ease;
     background:#333;
     text-align: center;
     padding:2.5rem;
 }
+
+.service .box-container .box:hover{
+    transform: scale(1.2);
+}
+
 
 .service .box-container .box button {
     color: white;
@@ -301,10 +307,16 @@ section{
     color:var(--main-color);
 }
 
+.price {
+    height: 700px;
+}
+
+
 .price .box-container{
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap:1.5rem;
+    height: 500px;
 }
 
 .price .box-container .box{
@@ -322,7 +334,7 @@ section{
     background:var(--main-color);
     color:#fff;
     padding:1.5rem 0;
-    font-size: 2rem;
+    font-size: 5rem;
 }
 
 .price .box-container .box .amount{
@@ -342,9 +354,9 @@ section{
     padding:1rem 0;
 }
 
-.price .box-container .box ul li i{
-    color:var(--main-color);
-    padding-right: .5rem;
+.price .box-container .box a{
+    position: relative;
+
 }
 
 .reivew .box{
