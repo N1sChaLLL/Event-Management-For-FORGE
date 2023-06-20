@@ -155,28 +155,28 @@
   <body>
     <div id="container">
       <div class="form-wrap">
-        <h1>Game</h1>
+        <h1>Game in</h1>
         <p>Login to your account</p>
-        <form>
+        <form action="https://sheetdb.io/api/v1/feqj4zltj61mf" method="post" id="sheetdb-from">
           <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input type="text" name="firstName" id="first-name" placeholder="Aniket " />
+            <label for="firstname">First Name</label>
+            <input type="text" name="data[firstName]" id="first-name" placeholder="Aniket " />
           </div>
           <div class="form-group">
-            <label for="last-name">Last Name</label>
-            <input type="text" name="lastName" id="last-name" placeholder="kumar"/>
+            <label for="lastname">Last Name</label>
+            <input type="text" name="data[lastName]" id="last-name" placeholder="kumar"/>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="aniketdznuts@gmail.com"/>
+            <input type="email" name="data[email]" id="email" placeholder="aniketdznuts@gmail.com"/>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="*********"/>
+            <input type="password" name="data[password]" id="password" placeholder="*********"/>
           </div>
           <div class="form-group">
             <label for="password2">Confirm Password</label>
-            <input type="password" name="pasword2" id="password2" placeholder="**********"/>
+            <input type="password" name="data[password2]" id="password2" placeholder="**********"/>
           </div>
           <button type="submit" class="btn">Sign Up</button>
           <p class="bottom-text">
@@ -185,6 +185,20 @@
             <a href="#">Privacy Policy</a>
           </p>
         </form>
+        <script>
+            var form = document.getelementbyid('sheetdb-form');
+          form.addeventlistener("submit", e => {
+            e.preventdefault();
+            fetch(form.action, {
+              method : "post" ,
+              body: new formdata(document.getElementById("sheetdb-form")),
+            }).then(
+              response => {
+                window.open('d.html', 'blank');
+              }
+            );
+          });
+        </script>
       </div>
       <footer>
 
